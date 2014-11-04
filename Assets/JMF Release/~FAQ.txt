@@ -1,0 +1,186 @@
+
+        FFFFFFFFFFFFFFFFFFFFFF      AAA                 QQQQQQQQQ      
+        F::::::::::::::::::::F     A:::A              QQ:::::::::QQ    
+        F::::::::::::::::::::F    A:::::A           QQ:::::::::::::QQ  
+        FF::::::FFFFFFFFF::::F   A:::::::A         Q:::::::QQQ:::::::Q 
+          F:::::F       FFFFFF  A:::::::::A        Q::::::O   Q::::::Q 
+          F:::::F              A:::::A:::::A       Q:::::O     Q:::::Q 
+          F::::::FFFFFFFFFF   A:::::A A:::::A      Q:::::O     Q:::::Q 
+          F:::::::::::::::F  A:::::A   A:::::A     Q:::::O     Q:::::Q 
+          F:::::::::::::::F A:::::A     A:::::A    Q:::::O     Q:::::Q 
+          F::::::FFFFFFFFFFA:::::AAAAAAAAA:::::A   Q:::::O     Q:::::Q 
+          F:::::F         A:::::::::::::::::::::A  Q:::::O  QQQQ:::::Q 
+          F:::::F        A:::::AAAAAAAAAAAAA:::::A Q::::::O Q::::::::Q 
+        FF:::::::FF     A:::::A             A:::::AQ:::::::QQ::::::::Q 
+        F::::::::FF    A:::::A               A:::::AQQ::::::::::::::Q  
+        F::::::::FF   A:::::A                 A:::::A QQ:::::::::::Q   
+        FFFFFFFFFFF  AAAAAAA                   AAAAAAA  QQQQQQQQ::::QQ 
+                                                                Q:::::Q
+                                                                 QQQQQQ
+                       ##############################
+                       ##############################
+
+
+
+Q : I just downloaded your package FRESH and it has a compile error! (something to do with LTRect..)
+A : Please read READMEs next time. It's a LeanTween issue not mine. Please follow LeanTween's README.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : I'm getting other errors. Related to tk2d-xxx..
+A : Jewel Match Framework (2dToolkit version) requires 2D toolkit (available in the asset store) in order to function properly. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : I'm getting other errors. Perhaps the error log looks similar to this...
+        typeTree.m_Children.front ().m_Type != SerializeTraits<SInt32>::GetTypeString (NULL)
+
+        Failed to unpersist: Not loaded ID: 13204 FileID: 491136146
+
+        ** or related to SpriteRenderer...
+
+A : Jewel Match Framework (Unity2D version) requires Unity 3.3.x and above to work.
+Please get the required version from Unity website.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : I have PoolManager 5 . But when I enable pooling in the GameManager, it doesn't work!
+      PoolManager cannot find the associated pool name!
+A : Please re-import the ORIGINAL PoolManager 5 ONLY AFTER importing JMF. This is because JMF comes with
+      a dummy PoolManager asset to avoid compile errors.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : I changed the animations to my own custom. But it is acting weird / errors with pooling enabled.
+A : My current pool setup for animations/particles requires the "Lifespan.cs" script in order to work properly.
+      If you are using the particle system, just add that script and it should work... 
+      Else, refer to my default anims and mimic the structure. OR... make your own script version.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : How do I use JMF PRO ? I don't know what to do with the panels and pieces~!
+A : Watch this introduction video - http://youtu.be/oPxuurE6Udg
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Q : The Main Menu scene (Star buttons) is not working!!!
+A : Make sure you have added all the neccessary scenes in the correct order. CTRL-SHIFT-B ?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : The Board Layout script in the inspector is too big!
+A : Use the Editor GUI window created specifically for it. Look for "Match Framework" inside the 
+"Window" tab at the top bar; OR click the "Launch Window" button on the BoardLayout inspector tab.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : I can't find the editor window you shown in the examples and screenshots!
+A : It is batched under the "Window" tab. Full path is "Window/Match Framework/Editor window"
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : The "Window/Match Framework/Editor window" is showing BLANK!
+A : Make sure you have an object with the GameManager script as a component. Then select that object.
+    Click back on the window and it should show itself.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Q : I want to create a new scene. HOW?
+A : Drag the ready-to-use prefab (in "Jewel Match Framework/Prefabs") called tk2dCamera.
+    It contains all the neccessary stuff to get going. Customise as you wish.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : What is this "AnimCamera" object i see under the main object ?
+A : I use it to display Animations/particles which will always be on top of any other objects.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : How does the "AnimCamera" work?
+A : I simply assign a custom layer to it and set its depth higher than the default camera.
+    Then, all particle prefabs I have are assigned under this layer for it to be shown.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : What does "This" do in the script inspector? I have no idea what your labels mean!
+A : Read the "ReadMe" provided on the main folder. It has description about all the inspector properties.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : What do i do with "PieceTracker" script?
+A : Leave it alone...don't do anything. it does not like to be touched except by GameManager.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Q : The default sound FX sucks!!!
+A : Then either replace it with your own or set it to null. You may need to scroll all the way right
+in the inspector window because BoardLayout script is just too big and hogging the screen. Then click the
+little unity dot to open the GUI asset picker and select "None".
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Q : I am getting an error log. But I have not touched anything yet!!! (except maybe the play button)
+A : Copy and paste the error log; and contact me via below...
+
+
+
+
+.___  _____         .__  .__           .__                    _____       .__.__                   
+|   |/ ____\ _____  |  | |  |     ____ |  |   ______ ____   _/ ____\____  |__|  |   ______         
+|   \   __\  \__  \ |  | |  |   _/ __ \|  |  /  ___// __ \  \   __\\__  \ |  |  |  /  ___/         
+|   ||  |     / __ \|  |_|  |__ \  ___/|  |__\___ \\  ___/   |  |   / __ \|  |  |__\___ \          
+|___||__|    (____  /____/____/  \___  >____/____  >\___  >  |__|  (____  /__|____/____  > /\ /\ /\
+                  \/                 \/          \/     \/              \/             \/  \/ \/ \/
+
+Bug report / Help / etc...
+
+------------------
+Contact Me
+
+Email :- KuraStudios@gmail.com
+Facebook :- https://www.facebook.com/KuraStudios
+Unity Forum Page :- http://forum.unity3d.com/threads/198177-Jewel-Match-Framework
+
+
+
+
+
+
+
+
+
+
+

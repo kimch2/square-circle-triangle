@@ -1,0 +1,266 @@
+Created by Kurayami88
+Bug reports are welcome~!
+Feedback & Suggestions will be great!
+
+Latest version of package used :-
+Unity 4.2.2f1
+2D toolkit v2.4.0
+LeanTween 2.031
+
+
+##############
+Changelog
+##############
+
+v1.4.0
+-------------------------
+
+* Fixed Unity2D "GameOverMsg" prefab. Was broken before this.
+
+* Fixed PortalA / PortalB 'isFilled' now returns false.
+
+* Collect Types game now ignores types beyond current GameManager active types.
+
+* SpecialSix piece now set to deny swap with non-destructible piece to avoid visual bug.
+
+* Improved eliminate pre-start match after manual assign.
+     little/No more worries concerning pre-start match even on manual board color setup.
+
+* Minor Bugfix on pre-start match engine.
+
+* Bugfix Board reset script ignoring special piece swap. ( by default affected treasure piece only )
+
+* added a new link for common usage codes reference - http://goo.gl/quVcTH
+
+
+
+
+v1.3.3
+-------------------------
+
+* Added a Unity2D version of JMFP. Does not rely on 2D toolkit to operate.
+  However, it is not mobile optimized. (many drawcalls)
+
+* GameManager gravity check extremely minor changes.
+    -> changed "countUnfilled()" to "countBlockedUnfilled()".
+
+* PortalA script minor bugfix. ( could not teleport if PortalB is in 'x = 0' column )
+
+* BoardLayout quick select option.
+    -> has the ability to change mode between "click-for-next" & "quick-select" via holding the 'ctrl' button.
+
+
+
+v1.3.2 (r2)
+-------------------------
+
+* Manual Update log from v1.3.1 to 1.3.2 made available for users whom has changed the default scripts
+
+* Fixed Gravity after effects bug whereby z-order does not retain after tweening.
+
+* More robust DestroyInTimeMarked() function.
+   - previously will error when too many calls (crazy amount) are made in a very short period.
+
+* More robust SuggestPiece() function.
+   - previously will error when too many calls of 'notifyBoardHasChanged()' are made in a very short period.
+
+* Fixed empty panel function reliance 'countBlockedUnfilled()'
+   - was working.. but working via incorrect logic. Logic is now fixed.
+
+* Update Board script's DestroyBox() function
+   - previously, non-destructible gamePiece will not allow panelHit() on the boardbox.
+     Now, Panel will get hit regardless of whether the gamePiece is destructible or not.
+
+* Fixed mislabelled function 'isFillable()' for panelDefinition.
+   - It actually determines whether the panel allows reset; nothing to do with gravity as suggested before.
+
+* Super upgraded the BoardLayout script! more features and neater design!
+   - switched the pieces to display textures too!
+   - has a new option to use the board chooser for pieces and panels
+   - slightly modified GUI layout for visual appeal.
+
+* Transfered "justCreated" bool from Board class to GamePiece class to make it more stable.
+
+
+v1.3.1
+-------------------------
+
+* Fixed Special piece being suggested even if it's there is not merge conditions.
+    i.e., currently affected the treasure Piece only since it's the only special piece
+          that has no merge conditions, thus bug went un-noticed.
+
+* Fixed BoardLayout script crashing if you remove a panel/piece script from the middle of the list.
+
+* Fixed "created by match" option of custom pieces working incorrectly.
+
+* Fixed BoardPanel nullReferenceException when using users call SetType() during runtime.
+    **will error if there is no piece on the board box + 'Has no starting piece' set 
+
+* Added auto-call for 'notifyBoardHasChanged()' when users call setType() during runtime.
+
+* Fixed "Special Piece" cannot merge with Normal Pieces because the call was initially rejected by GameManager.
+
+* Added Treasure Piece Skin loop around for treasure pieces more than skin defined.
+    
+
+
+
+v1.3.0
+-------------------------
+YOUTUBE TUTORIAL - http://youtu.be/U5guIMTpYww
+
+* Board Layout now support manual color assignment.
+
+* Improved "elimate pre-start match" formula.
+
+* animsCamera now set to auto-inherit settings from MainCamera.
+
+* Created a new script to handle common inGame functions. "JMFRelay"
+
+* FYI, JMFUtils has GameManager reference. Call using "JMFUtils.gm"
+
+* JMFUtils now has WinningConditions reference. Call using "JMFUtils.wc"
+
+* PieceDefiniton no longer uses Awake() function.
+    the template no longer has an override for the parent Awake().
+
+* Fixed TreasurePiece race-condition bug. WinningConditions null reference.
+    Previously bugs when setting TreasurePieces in BoardLayout since JMFP v1.2.1
+
+* Fixed OnPlayerMove/OnBoardStabilize call for panels.
+    Previously not being called if there isn't any "piece" on the panel.
+    i.e., Previously  empty/rock panels which does not have any piece
+       will not have this function being called... ever. now Yes...
+
+* Fixed unmatchable panel creating a match starting from itself.
+    i.e., the match condition did not verify that the starting point is not matchable.
+
+* Fixed "pop Specials at end" unintentionally popping treasure piece too...
+    Now, "not destructible" pieces are ignored from the auto-pop...
+
+
+
+v1.2.2
+-------------------------
+
+* Board Layout now support both left/right click to change panels and pieces.
+
+* Added board positions for custom pieces "ChanceToSpawnThis() & SkinToUseDuringSpawn()
+   users now can determine the calling board position calling the spawn.
+
+
+v1.2.1
+-------------------------
+
+* Fully integrated with PoolManager 5
+   --> comes with dummy PoolManager 5 scripts
+       ( import your original PoolManager 5 to use pooling feature )
+
+* JMF is packed & integrated with required assets
+   --> LeanTween v2.031
+   --> dummy PoolManager for script compilation
+   --> Paid asset not included (original PoolManager & 2d Toolkit )
+
+* fix no-more-moves bug introduced in v1.2.0
+
+* GameManager Script execution order re-arranged to '-1' to execute first
+
+* moved the "piece destroy effect" & "no more moves" default animation 
+    from GameManager script to the custom animation script
+
+
+
+v1.2.0
+-------------------------
+
+* Again fix "special-five <-> Bomb" merge default behaviour.
+
+* Made GameManager independant of empty panel
+   (Empty Panels behaviour now fully dependant on custom panel script)
+
+* Added onGameStart() function to custom piece/panels
+
+* Improved custom panel engine. Now has a bit more options and flexibility too!
+
+* added portal panels to the predefined panels
+    VIDEO TUTORIAL : http://youtu.be/6sahV7baL1I
+   
+
+* "Eliminate pre-start match" optimized for JMF Pro
+
+* board[x,y].isFilled boolean call is now an automatic getter
+    the boolean will automatically determine if the board is-filled, no manual setter required
+
+* Revert back support to Unity 4.2.2
+   NOTE : Upgrade JMF to 4.3 is possible. Upgrade at your own discretion.
+
+* No longer beta....
+
+
+
+v1.1.4 beta
+-------------------------
+* added more function calls for custom piece and panels
+
+* hooked up onBoardStabilize function call (was not hooked b4 this)
+
+* revise code flow to suit PoolManager more...
+
+
+
+v1.1.3 beta
+-------------------------
+* Panels onCreate/onDestroy function fixed.. forgot to implement it properly
+
+* Panel functions is given more descriptive notes
+
+* more rainbow piece merge fix...
+
+
+
+v1.1.2 beta
+-------------------------
+* Panels durability bugfix, panels changing back to normal 1 hit too early
+
+* Revised ReadMe / FAQ section to sync with JMF Pro
+
+* Added more explanations in using JMF Pro
+
+* clean up un-used remainders of JMF Basic
+
+
+
+v1.1.1 beta
+-------------------------
+* even more bugfixes! rainbow merge behaviour revised.
+
+
+v1.1.0 beta
+-------------------------
+* more bugfixes. resolved critical bug concerning new features of JMF Pro.
+
+* Board Layout now includes pieces selection!
+
+
+v1.0.1 beta
+-------------------------
+* bugfix for known-bugs
+
+* even more functions to use inside piece customisations!
+
+
+v1.0.0 beta
+-------------------------
+* Initial version of JMF Pro
+
+* Features :-
+    - Control Scripts for dynamic customization of game settings
+    - custom board panel layout
+    - ability to further define custom panels / game pieces rather easily
+    - comes with default placeholders for a simple game setup
+
+
+
+
+
+

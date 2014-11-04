@@ -1,0 +1,24 @@
+Manual changes for JMFP 1.3.2r2 to -> 1.3.3
+------------------------------
+
+
+// codes below does not represent the complete script... just areas of which changes has been made...
+
+
+// -----------
+// GameManager script
+// -----------
+
+// replaced "countUnfilled()" with "countBlockedUnfilled()"... seems to be more effective in certain conditions.
+Line 857 : int	distance = countBlockedUnfilled(x,y, false);
+Line 915 : int	distance = countBlockedUnfilled(x,y, false);
+
+
+
+// -----------
+// PortalA script
+// -----------
+
+minor logic error. forgot to include '0' ( >= sign ) into the equation. please replace the following lines...
+Line 72 : if(arrayRef[0] >= 0 && arrayRef[0] < gm.boardWidth &&
+Line 73 :	   arrayRef[1] >= 0 && arrayRef[1] < gm.boardHeight) { // within bounds

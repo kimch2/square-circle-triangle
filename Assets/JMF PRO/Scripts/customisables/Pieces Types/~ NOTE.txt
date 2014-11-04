@@ -1,0 +1,20 @@
+
+Created by Match - 
+      If the piece is created by match; if disabled, will reduce a check pattern call for this piece.
+      You may want to "return false;" in the matchConditions() function.
+
+
+is Special - 
+      defines if the piece follows the standard color / type of the normal piece. if Enabled, does not follow...
+      Also defines if the piece is matchable with other non-special pieces of the same skin slot.
+
+
+is Destructible - defines if powers/matches can destroy the piece. e.g., bomb blast, arrow-hit etc...
+
+Allow Gravity - defines if the piece will fall down due to gravity
+
+Ignore reset - defines if the piece will reset back to normal pieces during a "no more moves" reset.
+
+Score per Cube - the 'base' score of the piece when destroyed. ( will be multiplied by combo )
+
+Skin - Defines the visual of the object in use. Unless it is a special, the order of the skin is important!

@@ -91,6 +91,7 @@
      <Compile Include="Assets\LeanTween\LeanTweenExamples\Scripts\MenuExampleCSharp.cs" />
      <Compile Include="Assets\LeanTween\LeanTweenExamples\Scripts\MenuSimpleCSharp.cs" />
      <Compile Include="Assets\LeanTween\LeanTweenExamples\Scripts\PunchTester.cs" />
+     <None Include="Assets\Assets\Font\OFL.txt" />
      <None Include="Assets\LeanTween\LeanTweenExamples\Shader\2dUnlitWithFade.shader" />
      <None Include="Assets\JMF PRO\Prefabs\animations\~NOTE.txt" />
      <None Include="Assets\JMF Release\Manual Update\JMFP Manual update Log 1.3.1 to 1.3.2.txt" />

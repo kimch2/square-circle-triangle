@@ -1,0 +1,21 @@
+             _   _          
+            | | (_)         
+ _ __   ___ | |_ _  ___ ___ 
+| '_ \ / _ \| __| |/ __/ _ \
+| | | | (_) | |_| | (_|  __/
+|_| |_|\___/ \__|_|\___\___|
+===============================
+
+
+JMF comes included with *
+
+* LeanTween v2.031 (free asset from https://www.assetstore.unity3d.com/#/content/3595 )
+
+* "Dummy" PoolManager 5 ( empty scripts placeholders only ) 
+    --> (Optional) replace with the real PoolManager 5 if you wish to use the integrated pooling feature
+
+------
+
+You still need Your own copy of 2d Toolkit to use JMFP 2DToolkit version !
+OR 
+ensure you have Unity 2.3.x and above for JMFP Unity2D version.
